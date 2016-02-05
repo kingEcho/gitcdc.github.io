@@ -7,26 +7,26 @@ kramdown:
 
 # 作者信息
 author: 
-  name: 闫肃
-  email: suyan0830@gmail.com
-  link: http://yansu.org
-  weibo: http://weibo.com/yansu0711
-  github: http://github.com/suyan
+  name: GitDC
+  email: dchan0831@gmail.com
+  link: http://blog.gitdc.com
+  weibo: http://weibo.com/207124240
+  github: http://github.com/gitcdc
 
 # 站点信息
-title: 闫肃的博客 
-description: 闫肃的博客
-url: http://yansu.org
+title: GitDC - 探索互联网之路
+description: GitDC - 探索互联网之路
+url: http://blog.gitdc.com
 rss_url: /pages/atom.xml
 
 # avatar头像及Favicon
-avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
-favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
+avatar: http://www.gitdc.com/wp-content/uploads/avatars/1/1423400103-bpfull.jpg
+favicon: http://www.gitdc.com/favicon.ico
 
 # google analytics 设置
 ga:
-  id: UA-54767140-1
-  url: yansu.org
+  id: UA-73362052-1
+  url: blog.gitdc.com
 
 # disqus 设置
 disqus:

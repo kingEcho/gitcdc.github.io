@@ -264,7 +264,7 @@ git push
 
 另外一些特别的功能，比如三栏、评论、谷歌分析，这些都不难，相信你稍微打开Github读一下这个主题的代码就很快明白了。
 
-代码地址戳[这里][6]{:target="_blank"}
+代码地址戳[这里][6]
 
 [1]: /2013/04/23/deploy-jeklly-blog.html
 [2]: http://jekyllrb.com/docs/structure/

@@ -1,0 +1,80 @@
+---
+layout: post
+title: LNMP??php-fpm??memcache
+category: PHP
+tags: LNMP,Memcache
+keywords: LNMP,Memcache
+description: 
+---
+
+?????????????Memcache?Redis??????????Memcache??????Nginx+php-fpm??php?????????apt-get??Memcache?????????????php?bin?????Memcache
+
+????php?bin??????/usr/local/php/bin/??
+
+$ cd /usr/local/php/bin/
+
+??pecl??memcache
+
+$ ./pecl install memcache
+
+????????????
+
+        downloading memcache-2.2.6.tgz …
+        Starting to download memcache-2.2.6.tgz (35,957 bytes)
+        ……….done: 35,957 bytes
+        11 source files, building
+        WARNING: php_bin /usr/local/php/bin/php appears to have a suffix -cgi/bin/php, but config variable php_suffix does not match
+        running: phpize
+        Configuring for:
+        PHP Api Version: 20100412
+        Zend Module Api No: 20100525
+        Zend Extension Api No: 220100525
+        Cannot find autoconf. Please check your autoconf installation and the
+        $PHP_AUTOCONF environment variable. Then, rerun this script.
+        
+        ERROR: `phpize’ failed
+
+
+????????autoconf?????????autoconf
+
+        sudo apt-get install autoconf
+
+
+??????Memcache????????
+
+?????????????
+
+        Build process completed successfully
+        Installing ‘/usr/local/php/lib/php/extensions/no-debug-non-zts-20100525/memcache.so’
+        install ok: channel://pecl.php.net/memcache-2.2.6
+        configuration option “php_ini” is not set to php.ini location
+        You should add “extension=memcache.so” to php.ini
+
+
+???????`php.ini`???
+
+extension=memcache.so
+
+???????php-fpm
+
+        $ killall php-fpm
+        
+        $ /usr/local/php/sbin/php-fpm
+
+
+??Memcache????????????
+
+???????php????web???
+
+        &lt;?php
+        $mem = new Memcache;
+        $mem-&gt;connect('127.0.0.1', 11211);
+        $mem-&gt;set('key','Hello World!', 0, 60);
+        
+        $val = $mem-&gt;get('key');
+        echo $val;
+        ?&gt;  
+
+
+?????Hello World!?????Memcache????
+

@@ -66,14 +66,14 @@ extension=memcache.so
 
 将以下代码写入php文件，在web端打开
 
-        &lt;?php
+        <?php
         $mem = new Memcache;
-        $mem-&gt;connect('127.0.0.1', 11211);
-        $mem-&gt;set('key','Hello World!', 0, 60);
+        $mem->connect('127.0.0.1', 11211);
+        $mem->set('key','Hello World!', 0, 60);
         
-        $val = $mem-&gt;get('key');
+        $val = $mem->get('key');
         echo $val;
-        ?&gt;  
+        ?>  
 
 
 如果有出现Hello World!就表示安装Memcache成功了。

@@ -47,12 +47,12 @@ Apache的话使用mac自带的基本就够了，我的系统是10.9，可以使�
 这样很不适合做开发用，修改`/etc/apache2/httpd.conf`内容
 
         DocumentRoot "/Users/username/Sites"
-        &lt;Directory /&gt;
+        <Directory />
             Options Indexes MultiViews
             AllowOverride All
             Order allow,deny
             Allow from all
-        &lt;/Directory&gt;
+        </Directory>
 
 
 这样sites目录就是网站根目录了，代码都往这个下头丢

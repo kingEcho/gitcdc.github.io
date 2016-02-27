@@ -13,7 +13,7 @@ WordPress在加載眾多插件和請求的情況下加載速度很慢，而且�
 
 先來創建PHP文件（cache.php），放在網站根目錄。
 
-        &lt;?php
+        <?php
         define('CACHE_ROOT', dirname(__FILE__).'/cache');
         define('CACHE_LIFE', 86400);                   //缓存文件的生命期，单位秒，86400秒是一天
         define('CACHE_SUFFIX','.html');             //缓存文件的扩展名，千万别用 .php .asp .jsp .pl 等等
@@ -28,7 +28,7 @@ WordPress在加載眾多插件和請求的情況下加載速度很慢，而且�
         $cache_file = $cache_dir.'/'.$file_name;    //缓存文件存放路径
         
         if($_SERVER['REQUEST_METHOD']=='GET'){      //GET方式请求才缓存，POST之后一般都希望看到最新的结果
-            if(file_exists($cache_file) &amp;&amp; time() - filemtime($cache_file) &lt; CACHE_LIFE){   //如果缓存文件存在，并且没有过期，就把它读出来。
+            if(file_exists($cache_file) &amp;&amp; time() - filemtime($cache_file) < CACHE_LIFE){   //如果缓存文件存在，并且没有过期，就把它读出来。
                 $fp = fopen($cache_file,'rb');
                 fpassthru($fp);
                 fclose($fp);
@@ -56,7 +56,7 @@ WordPress在加載眾多插件和請求的情況下加載速度很慢，而且�
             function clean_old_cache(){
                 chdir(CACHE_ROOT);
                 foreach (glob("*/*".CACHE_SUFFIX) as $file){
-                   if(time()-filemtime($file)&gt;CACHE_LIFE){
+                   if(time()-filemtime($file)>CACHE_LIFE){
                        unlink($file);
                    }
                 }
@@ -69,7 +69,7 @@ WordPress在加載眾多插件和請求的情況下加載速度很慢，而且�
                 unlink($cache_file);                //不是GET的请求就删除缓存文件。
             }
         }
-        ?&gt;
+        ?>
 
 
 接著在根目錄創建cache文件夾，給cache文件夾777權限
@@ -77,7 +77,7 @@ WordPress在加載眾多插件和請求的情況下加載速度很慢，而且�
         chmod -R 777 /var/www/webRoot/cache
 
 
-然後在根目錄的index.php裡面&lt;?php下一行添加
+然後在根目錄的index.php裡面<?php下一行添加
 
         require('cache.php');
 

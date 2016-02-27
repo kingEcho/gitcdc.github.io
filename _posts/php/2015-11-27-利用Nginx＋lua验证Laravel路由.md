@@ -52,11 +52,11 @@ description:
         Route::get('checkroute', function(Illuminate\Http\Request $request){
         
             $realReq = new \Illuminate\Http\Request([],[],[],[],[],[
-                'REQUEST_URI'=&gt;$request-&gt;server('HTTP_X_ORG_REQUEST_URI'), 
-                'REQUEST_METHOD'=&gt;$request-&gt;server('HTTP_X_ORG_REQUEST_METHOD')
+                'REQUEST_URI'=>$request->server('HTTP_X_ORG_REQUEST_URI'), 
+                'REQUEST_METHOD'=>$request->server('HTTP_X_ORG_REQUEST_METHOD')
             ]);
         
-            $route = Route::getRoutes()-&gt;match($realReq);
+            $route = Route::getRoutes()->match($realReq);
         
             if ($route instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
                 abort(404);

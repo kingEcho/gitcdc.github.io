@@ -26,7 +26,7 @@ favicon: http://blog.gitdc.com/favicon.ico
 # google analytics 设置
 ga:
   id: UA-73362052-1
-  url: blog.gitdc.com
+  url: gitdc.com
 
 # disqus 设置
 disqus:
